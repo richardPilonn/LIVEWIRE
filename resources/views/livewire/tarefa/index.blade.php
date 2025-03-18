@@ -21,13 +21,15 @@
                                 <button class="btn btn-info btn-sm " data-bs-toggle="modal" data-bs-target="#viewModal"
                                     wire:click="abrirModalVisualizar({{ $t->id }})">Visualizar</button>
 
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                                    data-bs-target="#editModal" 
-                                    wire:click="abrirModalEdicao({{$t->id}})">Editar</button>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal"
+                                    wire:click="abrirModalEdicao({{ $t->id }})">Editar</button>
 
                                 <button class="btn btn-danger btn-sm" data-bs-toggle="modal"
                                     data-bs-target="#deleteModal"
-                                    wire:click="abrirModalExclusao({{$t->id}})">Excluir</button>
+                                    wire:click="abrirModalExclusao({{ $t->id }})">Excluir</button>
+
+                                    <a href="{{route('tarefa.editar', ['id' => $t->id])}}"
+                                        class="btn btn-info btn-sm">Editar Modal</a>
                             </td>
                         </tr>
                     @endforeach
@@ -54,8 +56,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger"
-                    wire:click="excluir">Excluir</button>
+                    <button type="button" class="btn btn-danger" wire:click="excluir">Excluir</button>
                 </div>
             </div>
         </div>
